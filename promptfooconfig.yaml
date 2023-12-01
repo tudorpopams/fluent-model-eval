@@ -1,0 +1,43 @@
+prompts: [prompt.json]
+
+providers:
+  [
+    openai:gpt-3.5-turbo-1106,
+    openai:chat:ft:gpt-3.5-turbo-1106:personal::8IcsEVjt,
+    openai:gpt-4-1106-preview,
+  ]
+
+tests:
+  - vars:
+      demo_code: file://templates/code-examples/hello-world.njk
+      available_components: file://templates/available-components.njk
+      user_query: A hello world app.
+      user_component_name: HelloWorld
+      user_component_description: A simple Hello World component that displays a greeting message to the user.
+  - vars:
+      demo_code: file://templates/code-examples/counter.njk
+      available_components: file://templates/available-components.njk
+      user_query: A counter app.
+      user_component_name: Counter
+      user_component_description: A simple counter app that has an increment and decrement button.
+  - vars:
+      demo_code: file://templates/code-examples/counter2.njk
+      available_components: file://templates/available-components.njk
+      user_query: A visually pleasing counter app.
+      user_component_name: NiceCounter
+      user_component_description: A simple counter app that has an increment and decrement button.
+#   - vars:
+#       topic: avocado toast
+#     assert:
+#       # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
+#       - type: icontains
+#         value: avocado
+#       - type: javascript
+#         value: 1 / (output.length + 1) # prefer shorter outputs
+
+#   - vars:
+#       topic: new york city
+#     assert:
+#       # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+#       - type: model-graded-closedqa
+#         value: ensure that the output is funny

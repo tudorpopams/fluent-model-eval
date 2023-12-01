@@ -1,0 +1,24 @@
+import React, { useState } from "react";
+import { Button, Text } from "@fluentui/react-components";
+
+const CounterApp = () => {
+  const [count, setCount] = useState(0);
+
+  const onIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const onDecrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <Button onClick={onIncrement}>Increase</Button>
+      <Text>{count}</Text>
+      <Button onClick={onDecrement}>Decrease</Button>
+    </div>
+  );
+};
+
+export default CounterApp;

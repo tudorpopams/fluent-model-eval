@@ -1,0 +1,33 @@
+Please try refining the following example instead of coming up with a solution of your own:
+
+```tsx
+import React from \"react\";
+import { Text, makeStyles, shorthands } from \"@fluentui/react-components\";
+
+const useStyles = makeStyles({
+  container: {
+    display: \"grid\",
+    justifyContent: \"center\",
+    alignItems: \"center\",
+    ...shorthands.gap(\"16px\"),
+    ...shorthands.margin(\"50px\"),
+  },
+  text: {
+    textAlign: \"center\",
+  },
+});
+
+const HelloWorldApp = () => {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.container}>
+      <Text className={classes.text}>Hello, World!</Text>
+      <Text className={classes.text}>Using Fluent UI React v9!</Text>
+    </div>
+  );
+};
+
+export default HelloWorldApp;
+
+```

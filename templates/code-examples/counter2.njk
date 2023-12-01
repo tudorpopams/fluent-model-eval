@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { Button, Card, Text } from "@fluentui/react-components";
+import { makeStyles, shorthands } from "@fluentui/react-components";
+
+const useStyles = makeStyles({
+  counterCard: {
+    ...shorthands.margin("auto"),
+    width: "300px",
+    ...shorthands.padding("24px"),
+  },
+  counterContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  counterButtons: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "16px",
+  },
+});
+
+const CounterApp = () => {
+  const classes = useStyles();
+  const [count, setCount] = useState(0);
+
+  const onIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const onDecrement = () => {
+    setCount(count - 1);
+  };
+
+  const onMultiply = () => {
+    setCount(count * 2);
+  };
+
+  return (
+    <Card className={classes.counterCard}>
+      <Text as="h1" align="center">
+        Counter App
+      </Text>
+      <div className={classes.counterContainer}>
+        <Text as="h2">{count}</Text>
+      </div>
+      <div className={classes.counterButtons}>
+        <Button onClick={onIncrement}>Increment</Button>
+        <Button onClick={onDecrement}>Decrement</Button>
+        <Button onClick={onMultiply}>Multiply</Button>
+      </div>
+    </Card>
+  );
+};
+
+export default CounterApp;
