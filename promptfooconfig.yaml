@@ -26,6 +26,12 @@ tests:
       user_query: A visually pleasing counter app.
       user_component_name: NiceCounter
       user_component_description: A simple counter app that has an increment and decrement button.
+  - vars:
+      demo_code: file://templates/code-examples/hello-world.njk
+      available_components: file://templates/available-components.njk
+      user_query: A cookie consent form.
+      user_component_name: CookieConsent
+      user_component_description: A cookie consent form that is fixed to the bottom on the screen and can be dismissed.
 #   - vars:
 #       topic: avocado toast
 #     assert:
